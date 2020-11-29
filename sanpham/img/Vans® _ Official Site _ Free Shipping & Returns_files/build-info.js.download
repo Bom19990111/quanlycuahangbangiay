@@ -1,0 +1,2 @@
+void 0===window.vfdp&&(window.vfdp={}),window.vfdp.ui={branch:"release/rel-20.14",commit:{short:"f1c883d4bc",hash:"f1c883d4bc3d279f154280b382d8869cb5f77c08"},build:"ATP-MFP1243-JOB1-12"},console.info("UI version:",window.vfdp.ui);
+//# sourceMappingURL=../../maps/js/shared/build-info.hash-814807f724225dd6f8f6d2a0693c897e.js.map

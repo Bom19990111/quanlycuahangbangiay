@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>banhang</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/banhang.css">
+  <script type="text/javascript" src="../thuvien/jquery-3.5.1.min.js"></script>
+  <script type="text/javascript" src="../js/banhang.js"></script>
+</head>
+<body>
+  <div class="header">
+    <nav class="navbar navbar-expand-sm navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="../sanpham/trangchu.html">
+          <img src="logo/logopr3.png" alt="" class="">
+        </a>
+        <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarResponsive"
+        aria-controls="navbarResponsive"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse ">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../sanpham/trangchu.html">
+              <i class="fas fa-home"></i>
+              Trang chủ
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Adidas</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="../sanpham/ultraboost.html"> Ultra Boots</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="../sanpham/alphabouce.html"> Alphabounce</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Nike</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="../sanpham/nikeair.html"> Nike Air</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="../sanpham/nikezoom.html"> Nike Zoom</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../sanpham/vans.html" > Vans</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../sanpham/converse.html" > Converse</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../game/game1.html"> Giải trí</a>
+          </li>
+        </ul>
+      </div>
+      <button class="show btn btn-warning"> <b> Giới thiệu </b> </button>
+      <div class="modal1">
+        <div class="modal-content modal-a">
+          <div class="modal-header">
+            <h4 class="modal-title" style="color: black"> HƯNG THỊNH SHOES</h4>
+            <button type="button" class="close" data-dismiss="modal" style="margin-left: 200px; color: black">&times;</button>
+          </div> <hr>
+          <div class="modal-body" style="text-align: justify; font-family: arial; font-size: 20px;">
+            <p> Chúng tôi xin chào bạn, cảm ơn bạn đã ghé thăm shop chúng tôi. Chúng tôi sẽ đem lại cho bạn những mẫu giày ưng ý nhất, với giá cả vô cùng hợp lý và chất lượng. Hiện tại Shop đang kinh doanh các mẫu giày hot nhất của các thương hiệu nổi tiếng như Adidas, Nike, Converse, Vans,... Với chất lượng cải thiện liên tục để hoàn hảo nhất cho Quý khách hàng của mình. Shop chúng tôi cam kết hoàn tiền 100% nếu phát hiện giày của chúng tôi là giày kém chất lượng. Khi mua hàng ở chúng tôi bạn sẽ được ưu đãi đặc biệt là <b style="color: #A5A723"> <i>1 phiếu giảm giá 20% khi mua giày trên 1tr và kèm theo bộ combo vệ sinh miễn phí trong vòng 6 tháng </i> </b>. Hãy tin tưởng ở cửa hàng tôi vì sự hài lòng của các bạn chính là mục tiêu phấn đấu của chúng tôi <i class="far fa-heart"></i>.</p> 
+            <h4 style="text-align: center;"> <b> XIN CẢM ƠN </b> </h4>
+          </div>
+          <hr>
+          <div class="modal-footer"></div>
+        </div>
+      </div>
+    </div>
+    <div class="account">
+      <a href="../form/form.html"> <b>Đăng nhập</b> </a>
+      <a href="../form/formdk.html"> <b>Đăng ký</b> </a>
+    </div>
+  </nav>
+</div>
+<div class="container"> 
+  <div class="container-fluid">
+    <table id="card" class="table table-striped" style="margin-top: 50px;"> 
+      <thead> 
+       <tr class="bg-dark"> 
+        <th class="text-warning" style="width:35%">Tên sản phẩm</th> 
+        <th class="text-warning" style="width:20%">Giá Bán</th> 
+        <th class="text-warning" style="width:20%">Số lượng</th> 
+        <th class="text-warning" style="width:20%">Tổng tiền</th> 
+        <th style="width:1%"></th>
+      </tr> 
+    </thead> 
+    <tbody>
+      <tr> 
+       <td id="sanpham"> 
+        <h4 class="name">AIR FORCE 1'07</h4> 
+        <img src="../sanpham/img/force_1.jpg"  style="height: 190px; width: 280px">
+      </td>
+      <td id="gia"> <b> 3,519,000đ</b></td> 
+      <td id="soluong">
+        <select class="qty-select sidebar-select" id="size" name="cart[52466799][qty]">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option> 
+        </select>
+      </td> 
+      <td type="button" class="btn btn-outline-danger btn-sm nut" id="tongtien" onclick="tinhtien()" style="width:60%"> <b> TỔNG TIỀN:</b> </td>  
+      <td> <p id="giatien"> </p></td>
+    </tr> 
+    <tr> 
+      <td><a href="../sanpham/trangchu.html" class="btn btn-dark text-warning"><b>Tiếp tục mua hàng</b></a> </td> 
+      <td colspan="2" class="hidden-xs"> </td> 
+      <td> <button type="button" class="btn btn-dark text-warning" data-toggle="modal" data-target="#modal" style="width:100%;border-radius: 20px">Thanh toán</button> </td> 
+    </tr>
+  </tbody>
+</table>
+<div class="row">
+ <div class="col-md-6 "> 
+  <div id="modal" class="modal fade" role ="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content content">
+        <div class="modal-header" style="background-color:#e6b800;">
+          <h4 class="modal-title" style="color:black;"> <b> XÁC NHẬN ĐƠN HÀNG </b> </h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+         <div class="row">
+           <div class="col-md-6">
+            <h4 style="margin-bottom: 15px;"> <b> AIR FORCE 1'07 </b> </h4> 
+            <img src="../sanpham/img/force_1.jpg" style="width:100%;height:140px;">
+            <button onclick='thanhtoan()' class="btn btn-dark text-warning" style="margin-top: 10px">Đặt hàng</button> <br> <br>
+            <h5> Tổng Tiền:<p id="tt" onsubmit="tinhtien()" style="width:60%"><b> </b></p></h5>
+          </div>
+          <div class="col-md-6">
+            <form class="form-submit">
+              <div class="form-label-group">
+                <p> Tên khách hàng: </p>
+                <input type="username" id="username" class="form-control">
+                <p class="error"></p>
+              </div>
+              <div class="form-label-group">
+                <p> Email: </p>
+                <input type="email" id="email" class="form-control"> 
+                <p class="error"></p>     
+              </div>
+              <div class="form-label-group">
+                <p> Địa chỉ: </p>
+                <input type="place" id="address" class="form-control"> 
+                <p class="error"></p>       
+              </div>
+              <div class="form-label-group">
+                <p> Thành Phố: </p>
+                <select id="city" name="city" class="form-control">
+                  <option value="0">Địa điểm</option>
+                  <option value="54">Huế</option>
+                  <option value="8">Hồ Chí Minh</option>
+                  <option value="4">Hà Nội</option>
+                  <option value="61">Đồng Nai</option>
+                  <option value="650">Bình Dương</option>
+                  <option value="72">Long An</option>
+                  <option value="71">Cần Thơ</option>
+                  <option value="784">An Giang</option>
+                  <option value="64">Bà Rịa Vũng Tàu</option>
+                  <option value="651">Bình Phước</option>
+                  <option value="56">Bình Định</option>
+                  <option value="62">Bình Thuận</option>
+                  <option value="781">Bạc Liêu</option>
+                  <option value="281">Bắc Cạn</option>
+                  <option value="240">Bắc Giang</option>
+                  <option value="241">Bắc Ninh</option>
+                  <option value="75">Bến Tre</option>
+                  <option value="26">Cao Bằng</option>
+                  <option value="780">Cà Mau</option>
+                  <option value="59">Gia Lai</option>
+                  <option value="19">Hà Giang</option>
+                  <option value="351">Hà Nam</option>
+                  <option value="34">Hà Tây</option>
+                  <option value="39">Hà Tĩnh</option>
+                  <option value="18">Hòa Bình</option>
+                  <option value="320">Hải Dương</option>
+                  <option value="31">Hải Phòng</option>
+                  <option value="785">Hậu Giang</option>
+                  <option value="321">Hưng Yên</option>
+                  <option value="58">Khánh Hòa</option>
+                  <option value="77">Kiên Giang</option>
+                  <option value="60">Kontum</option>
+                  <option value="23">Lai Châu</option>
+                  <option value="20">Lào Cai</option>
+                  <option value="63">Lâm Đồng</option>
+                  <option value="25">Lạng Sơn</option>
+                  <option value="350">Nam Định</option>
+                  <option value="38">Nghệ An</option>
+                  <option value="30">Ninh Bình</option>
+                  <option value="68">Ninh Thuận</option>
+                  <option value="210">Phú Thọ</option>
+                  <option value="57">Phú Yên</option>
+                  <option value="52">Quảng Bình</option>
+                  <option value="510">Quảng Nam</option>
+                  <option value="55">Quảng Ngãi</option>
+                  <option value="33">Quảng Ninh</option>
+                  <option value="53">Quảng Trị</option>
+                  <option value="79">Sóc Trăng</option>
+                  <option value="22">Sơn La</option>
+                  <option value="66">Tây Ninh</option>
+                  <option value="37">Thanh Hóa</option>
+                  <option value="36">Thái Bình</option>
+                  <option value="280">Thái Nguyên</option>
+                  <option value="73">Tiền Giang</option>
+                  <option value="74">Trà Vinh</option>
+                  <option value="27">Tuyên Quang</option>
+                  <option value="70">Vĩnh Long</option>
+                  <option value="211">Vĩnh Phúc</option>
+                  <option value="29">Yên Bái</option>
+                  <option value="511">Đà Nẵng</option>
+                  <option value="50">Đắk Lắk</option>
+                  <option value="67">Đồng Tháp</option>
+                  <option value="786">Đăk Nông</option>
+                </select>
+              </div>
+              <div class="form-label-group">
+                <p> Số điện thoại: </p>
+                <input type="phone" id="phone-number" class="form-control">   
+                <p class="error"></p> 
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer text-light">
+  <div class="row">
+    <div class="col-6">
+      <img src="../sanpham/img/logopr3.png" alt="" class="">
+    </div>
+    <div class="col-3">
+      <p> <i class="fas fa-map-marker-alt" style="color: red"></i>
+      103 Hà Huy Tập, TP Huế </p>
+      <p> <i class="fas fa-mobile-alt" style="color: green"></i>
+      0794161220 (Mr.Thịnh) </p>
+      <p> <i class="fas fa-envelope"></i>
+      hungthinhshoes@gmail.com </p>
+    </div>
+    <div class="col-3">
+      <p> <i class="fas fa-truck-moving" style="color: grey"></i>
+      Miễn phí vận chuyển </p>
+      <p> <i class="fab fa-facebook-square" style="color: blue"></i>
+      Hưng Thịnh Shoes </p>
+      <p> <i class="fab fa-instagram" style="color: purple"></i>
+      HT_shoes </p>
+    </div>
+  </div>
+  <div class="col">
+    <h6> Copyright@2020:HungThinhShoes </h6>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script></body>
+</html>

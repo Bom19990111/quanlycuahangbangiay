@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, user-scalable=no" />
+  <title>giaitri</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+      width: 100%;
+    }
+    
+    * {
+     -webkit-user-select: none; /*disable text selection */
+   }
+   p{
+    font-size: 25px;
+  }
+  a{
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+  <h1> Game: Vượt chướng ngại vật </h1>
+  <h2>Hướng dẫn chơi:</h2>
+  <p>Di chuyển bằng chuột (click chuột trái) để giúp ô vuông vượt qua các chướng ngại vật và tiến đến đích. Nếu ô vuông đến đích thì bạn sẽ dành chiến thắng và đến với level tiếp theo. Còn nếu ô vuông chạm phải vào các chướng ngại vật thì bạn sẽ chết. Bạn có 5 mạng để chơi, nếu hết 5 mạng thì bạn sẽ chơi lại từ đầu bắt đầu từ level 1 và với tốc độ chậm. Hãy khéo léo nhé!  </p>
+  <canvas id="mycanvas" width="940" height="350" ></canvas>
+  <script>
+    window.addEventListener("load",function() {
+      // vùng của game
+      var GAME_WIDTH = 940;
+      var GAME_HEIGHT = 360; // chiều cao của game
+      // hoạt động của game
+      var gameLive = true; // true: game hoạt động bình thường.
+      //level
+      var level = 1;
+      var life = 5;
+      //color 
+      var color = "blue";
+      var enemies = [
+      {
+          x: 140, // khoảng cách giữa các chướng ngại vật
+          y: 100, // khoảng cách lên xuống các chướng ngại vật
+          speedY: 4, // tốc độ chướng ngại vật
+          w: 40, // chiều dài
+          h: 40 // chiều cao
+        },
+        {
+          x: 250, // khoảng cách giữa các chướng ngại vật
+          y: 100, // khoảng cách lên xuống các chướng ngại vật
+          speedY: 5,
+          w: 40,
+          h: 40
+        },
+        {
+          x: 400, // khoảng cách giữa các chướng ngại vật
+          y: 100, // khoảng cách lên xuống các chướng ngại vật
+          speedY: 3,
+          w: 40,
+          h: 40
+        },
+        {
+          x: 550, // khoảng cách giữa các chướng ngại vật
+          y: 150, // khoảng cách lên xuống các chướng ngại vật
+          speedY: 4,
+          w: 40,
+          h: 40
+        }
+        ];
+      //the player object
+      var player = {
+        x: 10, // khoảng cách của ô vuông theo chiều x
+        y: 160, // khoảng cách của ô vuông theo chiều y
+        speedX: 6,
+        isMoving: false,  // true:làm ô vuông chạy k cần điểu khiển
+        w: 40,
+        h: 40
+      };
+      var đích = {
+        x: 880, // khoảng cách của ô vuông theo chiều x
+        y: 160, // khoảng cách của ô vuông theo chiều y
+        w: 50,
+        h: 36
+      }
+      var movePlayer = function() {
+        player.isMoving = true; // điều khiển ô vuông (true: sẽ di chuyển)
+      }
+      var stopPlayer = function() { // false thì ô vuông sẽ dừng lại theo ý muốn
+        player.isMoving = false;
+      }   
+      //grab the canvas and context
+      var canvas = document.getElementById("mycanvas");
+      var ctx = canvas.getContext("2d");
+     //thêm trình xử lý sự kiện vào phần tử.
+     canvas.addEventListener('mousedown', movePlayer); 
+     canvas.addEventListener('mouseup', stopPlayer);   
+     canvas.addEventListener('touchstart', movePlayer);
+     canvas.addEventListener('touchend', stopPlayer);   
+     var update = function() {
+        //thắng game
+        if(checkCollision(player, đích)) {
+          alert('Thắng rồi!');
+          level += 1; //cấp
+          life += 1; // mạng sống
+          player.speedX += 1; // tốc độ
+          player.x = 10;
+          player.y = 160;
+          player.isMoving = false; // true: ô vuông tự di chuyển và ngược lại
+          for(var ab = 0; ab < enemies.length; ab++){
+            if(enemies[ab].speedY > 1){
+              enemies[ab].speedY += 1 ;
+            }
+            else{
+              enemies[ab].speedY -= 1 ;
+            }
+          }
+        }
+        //update player
+        if(player.isMoving) {
+          player.x = player.x + player.speedX;
+        }
+        //update enemies
+        var i = 0;
+        var n = enemies.length;      
+        enemies.forEach(function(element, index){
+          //check for collision with player
+          if(checkCollision(player, element)) {
+            //stop the game
+            if(life === 0){
+              alert('Bạn đã thua! Hãy chơi lại nhé');
+              for(var ab = 0; ab < enemies.length; ab++){
+                if(enemies[ab].speedY > 1){
+                  enemies[ab].speedY -= (level - 1) ;
+                }
+                else{
+                  enemies[ab].speedY += (level - 1) ;
+                }
+              }
+              level = 1;
+              life = 6;
+              player.speedX = 2;
+              color ="blue";
+            }            
+            if(life > 0){
+              life -= 1 ;
+              color ="blue";
+            }           
+            player.x = 10; 
+            player.y = 160;
+            player.isMoving = false;
+          }
+          //move enemy
+          element.y += element.speedY;    
+          //check borders
+          if(element.y <= 10) {
+            element.y = 10;
+            //element.speedY = element.speedY * -1;
+            element.speedY *= -1;
+          }
+          else if(element.y >= GAME_HEIGHT - 50) {
+            element.y = GAME_HEIGHT - 50;
+            element.speedY *= -1;
+          }
+        });
+      };
+      //show the game on the screen
+      var draw = function() {
+        //clear the canvas
+        ctx.clearRect(0,0,GAME_WIDTH,GAME_HEIGHT);        
+        //draw level
+        ctx.font = "15px Verdana";
+        ctx.fillStyle = "rgb(0,0,0)";
+        ctx.fillText("Level : " + level , 10, 15);
+        ctx.fillText("Life : " + life , 10, 35);
+        ctx.fillText("Speed : " + player.speedX , 10, 55);
+        //draw player with color
+        ctx.fillStyle = color;
+        ctx.fillRect(player.x, player.y, player.w, player.h);
+        //draw enemies
+        ctx.fillStyle = "rgb(255,120,70)";
+        enemies.forEach(function(element, index){
+          ctx.fillRect(element.x, element.y, element.w, element.h);
+        });
+        //draw đích
+        ctx.fillStyle = "rgb(0,255,120)";
+        ctx.fillRect(đích.x, đích.y, đích.w, đích.h);
+        ctx.fillStyle = "rgb(0,0,0)";
+        ctx.fillText("đích", đích.x + 7, đích.y + 25);
+      };
+      //gets executed multiple times per second
+      var step = function() {
+        update();
+        draw();
+
+        if(gameLive) {
+          window.requestAnimationFrame(step); 
+        }     
+      };
+      //check the collision between two rectangles
+      var checkCollision = function(rect1, rect2) {
+        var closeOnWidth = Math.abs(rect1.x - rect2.x) <= Math.max(rect1.w, rect2.w);
+        var closeOnHeight = Math.abs(rect1.y - rect2.y) <= Math.max(rect1.h, rect2.h);
+        return closeOnWidth && closeOnHeight;
+      }
+      //initial kick
+      step();
+    });
+  </script>
+</body>
+</html>

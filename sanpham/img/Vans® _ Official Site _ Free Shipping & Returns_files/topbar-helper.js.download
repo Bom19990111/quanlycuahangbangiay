@@ -1,0 +1,2 @@
+define(["jquery"],function(t){return{outerWidthFix:function(t){if(!t||t.length<1)return 0;var e=t[0].getBoundingClientRect(),r=parseFloat(t.css("margin-left")),i=parseFloat(t.css("margin-right")),n=e.width+r+i;return 0<e.width?Math.ceil(n):Math.round(e.right-e.left,0)+1}}});
+//# sourceMappingURL=../../../maps/js/wcs/topbar/topbar-helper.hash-5e01b3eaca410e2afdcc5816304b1738.js.map
